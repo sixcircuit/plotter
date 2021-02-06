@@ -1,0 +1,152 @@
+input {
+  border-radius: 0;
+}
+
+a{
+   color: #212529;
+   cursor: pointer;
+}
+
+.center{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   /* justify-content: center; */
+}
+
+.main{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   max-width: 900px;
+}
+
+.title, .variants{
+   text-align: center
+}
+
+.result{ }
+
+.title{
+   margin-bottom: 0px;
+}
+
+.title_wrapper{
+   width: 100%;
+   padding-top: 50px;
+   padding-bottom: 10px;
+   background-color: white;
+}
+
+.variants{
+   margin-top: 8px;
+   margin-bottom: 0px;
+}
+
+.keywords a.copy{
+   display: block;
+   margin-top: 20px;
+}
+
+.keyword_container{
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 30px;
+}
+
+.footer{
+   align-self: center;
+   display: flex;
+   flex-direction: column;
+   margin-top: 50px;
+   margin-bottom: 50px;
+   /* align-items: center; */
+   /* justify-content: center; */
+   width: 100%;
+   max-width: 600px;
+   text-align: center;
+}
+
+.inputs{
+   align-self: center;
+   margin-bottom: 40px;
+   font-size: 20px;
+}
+
+input{
+   /* Remove First */
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+
+   width: 35px;
+   text-align: center;
+   padding: 0px;
+   border: none;
+   border-bottom: 2px solid #212529;
+   background-color: white;
+}
+
+input:focus{
+   outline: none;
+}
+
+input.disabled {
+   color: #212529; 
+   -webkit-text-fill-color: #212529;
+   /* -webkit-text-fill-color: #880000; */
+   border-bottom: none;
+   opacity: 1;
+}
+
+.explain{
+   width: 100%;
+   margin-top: 20px;
+}
+
+.odds{
+   /* word-wrap: break-word; */
+   /* word-wrap: normal; */
+   word-break: break-all;
+}
+
+.keywords{
+   flex-basis: 0;
+   flex-grow: 1;
+   max-width: 300px;
+   text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+   .title_wrapper{
+      position: sticky;
+      top: 0;
+      left: 0;
+      padding-top: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #212529;
+      /* padding-left: 20px; */
+      /* padding-right: 20px; */
+   }
+   .keyword_container {
+      flex-wrap: wrap;
+   }
+   .keywords{
+      flex-basis: auto;
+      width: 100%;
+      margin-bottom: 30px;
+   }
+   .keywords a.copy{
+      margin-top: 10px;
+   }
+   .variants{
+      font-size: 15px;
+   }
+   .footer{
+      margin-top: 20px;
+   }
+   .title_wrapper, .keyword_container, .footer {
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+}

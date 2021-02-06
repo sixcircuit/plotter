@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- <link rel="icon" href="/favicon.ico"> -->
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">-->
+
+      <title>Plot Generator</title>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.js"></script>
+      <script src="js/any-base.js"></script>
+      <script src="js/base58.js"></script>
+      <script src="js/util.js"></script>
+      <script src="js/generator.gen.js"></script>
+      <script src="js/site.js"></script>
+
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="css/site.css">
+
+   </head>
+
+   <body role="document">
+
+      <div class="center">
+         <div class="main">
+            <div class="result">
+               <div class="title_wrapper">
+                  <h1 class="title"></h1>
+                  <h5 class="variants"></h5>
+               </div>
+               <div class="keyword_container">
+               </div>
+            </div>
+            <div class="footer">
+               <div class="inputs">
+                  <input class="plots_input disabled" type="text" value=3 disabled></input>
+                  <span>&times;</span>
+                  <input class="keywords_input" type="text"></input>
+               </div>
+               <div class="links">
+                  <h6>
+                     <a class="permalink">This is a link to this exact page.</a>
+                  </h6>
+                  <h6>Refresh for something different.</h6>
+               </div>
+               <div class="explain">
+                  <h6>This site generates writing ideas.</h6>
+                  <h6>It draws from <span class="n_titles"></span> episode titles and <span class="n_keywords"></span> movie plot keywords.</h6>
+                  <br/>
+                  <h6>There are <span class="odds"></span> variations.</h6>
+                  <h6>Get writing.</h6>
+
+                  <br/>
+                  <br/>
+                  <h6>Made with joy by <a target="_blank" href="https://twitter.com/sixcircuit">Kendrick Taylor</a>.</h6>
+                  <input id="clipboard" type="hidden">
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
