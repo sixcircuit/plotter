@@ -11,7 +11,7 @@ const _plots = require('../data/plot_keywords.json');
 function generator(titles, plots){
 
    // returns a random number between min (inclusive) and max (exclusive)
-   function random_int(min, max){ 
+   function random_int(min, max){
       min = Math.ceil(min);
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -32,16 +32,16 @@ function generator(titles, plots){
       return(indexes);
    }
 
-   function get_epidsode(indexes){
+   function get_episode(indexes){
       const title_index = indexes[0];
       if(title_index >= titles.length){ throw(new Error("index outside of title bounds.")); }
 
       return({
          title: titles[title_index],
          plots: indexes[1].map(function(plot){
-            return plot.map(function(i){ 
+            return plot.map(function(i){
                if(i >= plots.length){ throw(new Error("index outside of keyword bounds.")); }
-               return plots[i] 
+               return plots[i]
             });
          }),
          indexes
@@ -58,12 +58,12 @@ function generator(titles, plots){
 
       const indexes = [ sample(titles, 1)[0], p ];
 
-      const episode = get_epidsode(indexes);
+      const episode = get_episode(indexes);
 
       return(episode);
    }
 
-   random_episode.get = get_epidsode;
+   random_episode.get = get_episode;
    random_episode.random = random_episode;
    random_episode.titles = titles;
    random_episode.keywords = plots;
@@ -81,12 +81,17 @@ function check_titles(){
 
 console.dir(generator(_titles, _plots)(2, 5));
 
-const static_lib = `window.plots = (function(){
+const web_lib = `window.plots = (function(){
+   return (${generator.toString()})(${JSON.stringify(_titles)}, ${JSON.stringify(_plots)});
+})()`;
+
+const node_lib = `module.exports = (function(){
    return (${generator.toString()})(${JSON.stringify(_titles)}, ${JSON.stringify(_plots)});
 })()`;
 
 const this_dir = __dirname;
 
-fs.writeFileSync(path.join(this_dir, "../site/js/generator.gen.js"), static_lib);
+fs.writeFileSync(path.join(this_dir, "../build/plots.gen.node.js"), node_lib);
+fs.writeFileSync(path.join(this_dir, "../build/plots.gen.web.js"), web_lib);
 
 
